@@ -1,7 +1,7 @@
 const outerFunction = () => {
-  let inc = "outerFunc";
+  let inc = 0;
   const innerFunction = () => {
-    console.log(inc);
+    console.log(++inc);
   };
   return innerFunction;
 };

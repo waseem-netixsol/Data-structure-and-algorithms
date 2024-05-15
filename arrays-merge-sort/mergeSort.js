@@ -14,6 +14,7 @@ const sortHandler = (mergedArray) => {
         let temp = mergedArray[i];
         mergedArray[i] = mergedArray[a];
         mergedArray[a] = temp;
+        // swapping without third variable
         // mergedArray[i] = mergedArray[i] + mergedArray[a];
         // mergedArray[a] = mergedArray[i] - mergedArray[a];
         // mergedArray[i] = mergedArray[i] - mergedArray[a];
