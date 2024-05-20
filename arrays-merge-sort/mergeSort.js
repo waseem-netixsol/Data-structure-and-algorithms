@@ -1,7 +1,6 @@
 const a1 = [1, 2, 3, 4, 5, 9];
 const a2 = [2, 4, 6, 1, 3, 4, 5, 8];
-// output -> [1,1, 1, 2, 2, 3, 3,4, 4, 4,5, 5,6,8,9]
-// [1, 2, 3,4, 5,6, 8, 9]
+
 // merging two arrays
 const mergeHandler = (a, b) => {
   return [...a, ...b];
@@ -11,13 +10,13 @@ const sortHandler = (mergedArray) => {
   for (i = 0; i < mergedArray.length; i++) {
     for (a = i + 1; a < mergedArray.length; a++) {
       if (mergedArray[i] > mergedArray[a]) {
-        let temp = mergedArray[i];
-        mergedArray[i] = mergedArray[a];
-        mergedArray[a] = temp;
+        // let temp = mergedArray[i];
+        // mergedArray[i] = mergedArray[a];
+        // mergedArray[a] = temp;
         // swapping without third variable
-        // mergedArray[i] = mergedArray[i] + mergedArray[a];
-        // mergedArray[a] = mergedArray[i] - mergedArray[a];
-        // mergedArray[i] = mergedArray[i] - mergedArray[a];
+        mergedArray[i] = mergedArray[i] + mergedArray[a];
+        mergedArray[a] = mergedArray[i] - mergedArray[a];
+        mergedArray[i] = mergedArray[i] - mergedArray[a];
       }
     }
   }
@@ -31,9 +30,7 @@ const duplicationRemoveHandler = (sortedArr) => {
   }
   return unique;
 };
-
 const merged = mergeHandler(a1, a2);
 const sortedArray = sortHandler(merged);
 const uniqueArr = duplicationRemoveHandler(sortedArray);
-
 console.log("Merged => Sorted => Unique => ", uniqueArr);
